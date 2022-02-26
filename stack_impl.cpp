@@ -16,6 +16,7 @@ using namespace std;
 
 class Stack{
   int top ;
+  int min;
   public:
    int a[MAX];
    Stack(){
@@ -25,6 +26,7 @@ class Stack{
    int pop();
    void peek();
    void isEmpty();
+   void min_num();
 };
 
 int Stack::pop(){
@@ -38,6 +40,13 @@ int Stack::pop(){
     return num;
 }
 void Stack::push(int x){
+    if(top==-1){
+        min=x;
+    }else{
+        if(x<min){
+            min=x;
+        }
+    }
     if(top<MAX){
         top++;
         a[top]=x;
@@ -53,17 +62,21 @@ void Stack::isEmpty(){
     if(top==-1){
         cout<<"Stack is empty";
     }else{
-        cout<<"Stack is not empty. You can still add "<<MAX-top<<" numbers";
+        cout<<"Stack is not empty. You can still add "<<MAX-top<<" numbers"<<'\n';
     }
+}
+void Stack::min_num(){
+    cout<<"min no is "<<min;
 }
 int main(){
     Stack s;
     s.push(2);
-    s.push(3);
+    s.push(1);
     s.push(5);
     int a=s.pop();
     cout<<"Popped number is "<<a<<endl;
     s.peek();
     s.isEmpty();
+    s.min_num();
     return 0;
 }
