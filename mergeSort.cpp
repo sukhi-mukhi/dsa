@@ -50,7 +50,6 @@ void mergeSort(int *array, int l, int r) {
    
 }
 int main() {
-   int n;
    int arr[] ={8,4,3,12,25,6,13,10};
    mergeSort(arr, 0, 7);     //(n-1) for last index
    cout << "Array after Sorting: ";
