@@ -12,8 +12,10 @@ void display(int *array, int size) {
    cout << endl;
 }
 void merge(int *a, int l, int m, int r) {
-   //Practise Yourself : Write your code Here
-   int i=l,j=m+1,k=l;
+   
+   int i=l;
+   int j=m+1;
+   int k=l;
    int array_b[100];
    while(i<=m && j<=r){
        if(a[i]<a[j]){
